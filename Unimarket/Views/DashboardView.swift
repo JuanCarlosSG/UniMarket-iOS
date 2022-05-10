@@ -34,6 +34,7 @@ struct DashboardView: View {
                 }
             }
             .navigationBarHidden(true)
+            .navigationBarTitleDisplayMode(.inline)
         }
     }
 }

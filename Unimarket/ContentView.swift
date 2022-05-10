@@ -9,6 +9,10 @@ import SwiftUI
 
 let screenWidth = UIScreen.main.bounds.width
 let screenHeight = UIScreen.main.bounds.height
+let scenes = UIApplication.shared.connectedScenes
+let windowScene = scenes.first as? UIWindowScene
+let window = windowScene?.windows.first
+var edges = window?.safeAreaInsets
 
 struct ContentView: View {
     var body: some View {

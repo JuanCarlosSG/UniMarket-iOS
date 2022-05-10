@@ -17,11 +17,11 @@ struct MenuButton: View {
         } label: {
             HStack {
                 Image(systemName: icon)
-                    .font(.system(size: 30).bold())
+                    .font(.system(size: 30, weight: .semibold))
                     .padding(.trailing)
                 Text(title)
                     .font(.title2)
-                    .bold()
+                    .fontWeight(.semibold)
                 Spacer()
             }
         }

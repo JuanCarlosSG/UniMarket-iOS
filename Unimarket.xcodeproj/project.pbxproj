@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		65892232282AFE2B003BFB7E /* SocialMediaButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65892231282AFE2B003BFB7E /* SocialMediaButton.swift */; };
+		65892234282B0773003BFB7E /* ProductPostCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65892233282B0773003BFB7E /* ProductPostCard.swift */; };
+		65892236282B1167003BFB7E /* BttmTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65892235282B1167003BFB7E /* BttmTitle.swift */; };
 		65B9EAFF2828A9760099D1EC /* UnimarketApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B9EAFE2828A9760099D1EC /* UnimarketApp.swift */; };
 		65B9EB012828A9760099D1EC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B9EB002828A9760099D1EC /* ContentView.swift */; };
 		65B9EB032828A97B0099D1EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65B9EB022828A97B0099D1EC /* Assets.xcassets */; };
@@ -37,6 +40,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		65892231282AFE2B003BFB7E /* SocialMediaButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialMediaButton.swift; sourceTree = "<group>"; };
+		65892233282B0773003BFB7E /* ProductPostCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductPostCard.swift; sourceTree = "<group>"; };
+		65892235282B1167003BFB7E /* BttmTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BttmTitle.swift; sourceTree = "<group>"; };
 		65B9EAFB2828A9760099D1EC /* UniMarket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UniMarket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65B9EAFE2828A9760099D1EC /* UnimarketApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnimarketApp.swift; sourceTree = "<group>"; };
 		65B9EB002828A9760099D1EC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -156,6 +162,9 @@
 				65B9EB392828AF720099D1EC /* CustomPicker.swift */,
 				65D114C0282A2D7F00626B39 /* AddProductButton.swift */,
 				65F33C57282A4E25001A57C0 /* MenuButton.swift */,
+				65892231282AFE2B003BFB7E /* SocialMediaButton.swift */,
+				65892233282B0773003BFB7E /* ProductPostCard.swift */,
+				65892235282B1167003BFB7E /* BttmTitle.swift */,
 			);
 			path = CustomObjects;
 			sourceTree = "<group>";
@@ -276,11 +285,14 @@
 				65B9EB342828AF090099D1EC /* ProductCard.swift in Sources */,
 				65B9EB362828AF220099D1EC /* CustomTextField.swift in Sources */,
 				65B9EB272828AE040099D1EC /* EditProfileView.swift in Sources */,
+				65892234282B0773003BFB7E /* ProductPostCard.swift in Sources */,
+				65892236282B1167003BFB7E /* BttmTitle.swift in Sources */,
 				65B9EB1C2828AD200099D1EC /* DashboardView.swift in Sources */,
 				65D114C6282A33FC00626B39 /* TopBarView.swift in Sources */,
 				65B9EB3A2828AF720099D1EC /* CustomPicker.swift in Sources */,
 				65B9EB242828ADF10099D1EC /* MenuView.swift in Sources */,
 				65B9EB162828ACD90099D1EC /* SchoolView.swift in Sources */,
+				65892232282AFE2B003BFB7E /* SocialMediaButton.swift in Sources */,
 				65B9EB182828ACEA0099D1EC /* LoginView.swift in Sources */,
 				65D114C4282A338800626B39 /* ProductGridView.swift in Sources */,
 				65B9EAFF2828A9760099D1EC /* UnimarketApp.swift in Sources */,
