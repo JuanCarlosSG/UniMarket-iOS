@@ -28,6 +28,10 @@
 		65B9EB362828AF220099D1EC /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B9EB352828AF220099D1EC /* CustomTextField.swift */; };
 		65B9EB382828AF2F0099D1EC /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B9EB372828AF2F0099D1EC /* CustomButton.swift */; };
 		65B9EB3A2828AF720099D1EC /* CustomPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B9EB392828AF720099D1EC /* CustomPicker.swift */; };
+		65D114C1282A2D7F00626B39 /* AddProductButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D114C0282A2D7F00626B39 /* AddProductButton.swift */; };
+		65D114C4282A338800626B39 /* ProductGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D114C3282A338800626B39 /* ProductGridView.swift */; };
+		65D114C6282A33FC00626B39 /* TopBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D114C5282A33FC00626B39 /* TopBarView.swift */; };
+		65D35CE1282A397300744D80 /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D35CE0282A397300744D80 /* FilterView.swift */; };
 		65E3ECE32829F405008053D9 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E3ECE22829F405008053D9 /* AuthView.swift */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +58,10 @@
 		65B9EB352828AF220099D1EC /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		65B9EB372828AF2F0099D1EC /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		65B9EB392828AF720099D1EC /* CustomPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPicker.swift; sourceTree = "<group>"; };
+		65D114C0282A2D7F00626B39 /* AddProductButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductButton.swift; sourceTree = "<group>"; };
+		65D114C3282A338800626B39 /* ProductGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductGridView.swift; sourceTree = "<group>"; };
+		65D114C5282A33FC00626B39 /* TopBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBarView.swift; sourceTree = "<group>"; };
+		65D35CE0282A397300744D80 /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
 		65E3ECE22829F405008053D9 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -116,6 +124,7 @@
 		65B9EB0D2828AA6B0099D1EC /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				65D114C2282A336A00626B39 /* Dashboard */,
 				65B9EB252828ADF50099D1EC /* Menu */,
 				65B9EB142828ACB40099D1EC /* Auth */,
 				65B9EB102828AA870099D1EC /* CustomObjects */,
@@ -143,6 +152,7 @@
 				65B9EB352828AF220099D1EC /* CustomTextField.swift */,
 				65B9EB372828AF2F0099D1EC /* CustomButton.swift */,
 				65B9EB392828AF720099D1EC /* CustomPicker.swift */,
+				65D114C0282A2D7F00626B39 /* AddProductButton.swift */,
 			);
 			path = CustomObjects;
 			sourceTree = "<group>";
@@ -167,6 +177,16 @@
 				65B9EB2C2828AE510099D1EC /* HelpView.swift */,
 			);
 			path = Menu;
+			sourceTree = "<group>";
+		};
+		65D114C2282A336A00626B39 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				65D114C3282A338800626B39 /* ProductGridView.swift */,
+				65D114C5282A33FC00626B39 /* TopBarView.swift */,
+				65D35CE0282A397300744D80 /* FilterView.swift */,
+			);
+			path = Dashboard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -242,6 +262,8 @@
 				65B9EB2B2828AE420099D1EC /* ProductsView.swift in Sources */,
 				65B9EB222828AD9E0099D1EC /* SellerDetailView.swift in Sources */,
 				65B9EB382828AF2F0099D1EC /* CustomButton.swift in Sources */,
+				65D114C1282A2D7F00626B39 /* AddProductButton.swift in Sources */,
+				65D35CE1282A397300744D80 /* FilterView.swift in Sources */,
 				65B9EB1A2828ACFD0099D1EC /* SignupView.swift in Sources */,
 				65B9EB1E2828AD300099D1EC /* ProductDetailView.swift in Sources */,
 				65B9EB202828AD4A0099D1EC /* NewProductView.swift in Sources */,
@@ -252,10 +274,12 @@
 				65B9EB362828AF220099D1EC /* CustomTextField.swift in Sources */,
 				65B9EB272828AE040099D1EC /* EditProfileView.swift in Sources */,
 				65B9EB1C2828AD200099D1EC /* DashboardView.swift in Sources */,
+				65D114C6282A33FC00626B39 /* TopBarView.swift in Sources */,
 				65B9EB3A2828AF720099D1EC /* CustomPicker.swift in Sources */,
 				65B9EB242828ADF10099D1EC /* MenuView.swift in Sources */,
 				65B9EB162828ACD90099D1EC /* SchoolView.swift in Sources */,
 				65B9EB182828ACEA0099D1EC /* LoginView.swift in Sources */,
+				65D114C4282A338800626B39 /* ProductGridView.swift in Sources */,
 				65B9EAFF2828A9760099D1EC /* UnimarketApp.swift in Sources */,
 				65B9EB2D2828AE510099D1EC /* HelpView.swift in Sources */,
 				65B9EB292828AE210099D1EC /* SettingsView.swift in Sources */,
