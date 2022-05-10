@@ -23,5 +23,6 @@ struct AddProductButton: View {
                         .shadow(color: Color(.lightGray), radius: 5, x: 0, y: 0)
                 )
         }
+        .padding()
     }
 }

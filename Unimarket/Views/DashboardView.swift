@@ -8,18 +8,32 @@
 import SwiftUI
 
 struct DashboardView: View {
+    @State var showNewProductView: Bool = false
+    @State var showMenuView: Bool = false
     var body: some View {
-        ZStack(alignment: .bottomTrailing) {
-            VStack {
-                TopBarView()
-                FilterView()
-                    .padding(.bottom, 10)
-                ProductGridView()
+        NavigationView {
+            ZStack(alignment: .bottomTrailing) {
+                NavigationLink(isActive: self.$showMenuView) {
+                    MenuView()
+                    
+                } label: { EmptyView() }
+                VStack {
+                    TopBarView {
+                        self.showMenuView.toggle()
+                    }
+                    FilterView()
+                    ProductGridView()
+                }
+                AddProductButton {
+                    self.showNewProductView.toggle()
+                }
             }
-            AddProductButton {
-                
+            .sheet(isPresented: self.$showNewProductView) {
+                NewProductView {
+                    self.showNewProductView.toggle()
+                }
             }
-            .padding()
+            .navigationBarHidden(true)
         }
     }
 }

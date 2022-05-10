@@ -8,13 +8,45 @@
 import SwiftUI
 
 struct NewProductView: View {
+    var action: () -> Void
+    @State var title: String = ""
+    @State var type: String = ""
+    @State var price: String = ""
+    @State var desc: String = ""
+    @State var categories: String = ""
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
+        Group {
+            VStack(alignment: .leading, spacing: 20) {
+                HStack {
+                    Spacer()
+                    Button {
+                        action()
+                    } label: {
+                        Image(systemName: "xmark")
+                            .foregroundColor(.black)
+                            .font(.system(size: 22).bold())
+                    }
 
-struct NewProductView_Previews: PreviewProvider {
-    static var previews: some View {
-        NewProductView()
+                }
+                Text("Agregar un producto")
+                    .foregroundColor(Color("AccentGray"))
+                    .font(.title3)
+                    .padding(.bottom)
+                CustomTextField(placeholder: "Título", textValue: self.$title)
+                CustomTextField(placeholder: "Tipo", textValue: self.$type)
+                CustomTextField(placeholder: "Precio", textValue: self.$price)
+                CustomTextField(placeholder: "Descripción", textValue: self.$desc)
+                CustomTextField(placeholder: "Categorías", textValue: self.$categories)
+                CustomButton(text: "Subir producto") {
+                    
+                }
+                .frame(maxWidth: .infinity)
+                .padding()
+                Spacer()
+            }
+            .padding()
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(Color("Main"))
     }
 }

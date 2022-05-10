@@ -8,8 +8,38 @@
 import SwiftUI
 
 struct MenuView: View {
+    var buttons: [String] = ["Mis Publicaciones", "Configuración", "Ayuda", "Cerrar Sesión"]
+    var buttonIcons: [String] = ["book.closed.circle", "gearshape.circle", "questionmark.circle", "power.circle"]
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(spacing: 20) {
+            Image("Profile")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .clipShape(Circle())
+            Text("Juan Carlos")
+                .font(.title)
+                .bold()
+            CustomButton(text: "Editar Perfil") {
+                
+            }
+            VStack(spacing: 10) {
+                ForEach(buttons.indices, id: \.self) { idx in
+                    MenuButton(title: buttons[idx], icon: buttonIcons[idx]) {
+                        
+                    }
+                }
+            }
+            .padding(.horizontal)
+            .padding()
+            Spacer()
+            Text("UNIMARKET")
+                .font(.title)
+                .fontWeight(.bold)
+                .padding(.top)
+                .foregroundColor(Color("AccentRed"))
+        }
+        .navigationBarHidden(false)
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 

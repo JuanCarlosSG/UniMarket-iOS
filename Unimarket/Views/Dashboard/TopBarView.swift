@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct TopBarView: View {
+    var action: () -> Void
     var body: some View {
         HStack {
             Text("UNIMARKET")
@@ -15,7 +16,7 @@ struct TopBarView: View {
                 .fontWeight(.bold)
             Spacer()
             Button {
-                
+                action()
             } label: {
                 Image(systemName: "line.3.horizontal")
                     .foregroundColor(.black)

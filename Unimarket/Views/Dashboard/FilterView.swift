@@ -35,6 +35,7 @@ struct FilterView: View {
                 }
             }
         }
+        .padding(.bottom, 10)
     }
 }
 
