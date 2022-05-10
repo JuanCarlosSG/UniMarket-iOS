@@ -8,11 +8,18 @@
 import SwiftUI
 
 struct LoginView: View {
-    var collegeName: String = "Universidad Panamericana"
+    var collegeName: String
     @State var email: String = ""
     @State var password : String = ""
+    @Binding var showLoginView: Bool
+    @State var showSignUpView: Bool = false
     var body: some View {
-        Group {
+        ZStack {
+            NavigationLink(isActive: self.$showSignUpView) {
+                SignupView()
+                    .navigationBarHidden(false)
+                    .navigationBarTitleDisplayMode(.inline)
+            } label: { EmptyView() }
             VStack(spacing: 50) {
                 VStack(spacing: 30) {
                     Text("UNIMARKET")
@@ -37,15 +44,19 @@ struct LoginView: View {
                         Text("¿No tienens cuenta?")
                             .foregroundColor(Color("AccentGray"))
                         Button {
-                            
+                            self.showSignUpView.toggle()
                         } label: {
                             Text("Regístrate")
                                 .foregroundColor(Color("AccentRed"))
                         }
                         
                     }
-                    Text("Cambiar de Universidad")
-                        .foregroundColor(Color("AccentRed"))
+                    Button {
+                        self.showLoginView.toggle()
+                    } label: {
+                        Text("Cambiar de Universidad")
+                            .foregroundColor(Color("AccentRed"))
+                    }
                 }
                 Spacer()
             }
@@ -53,11 +64,5 @@ struct LoginView: View {
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background( Color("Main") )
-    }
-}
-
-struct LoginView_Previews: PreviewProvider {
-    static var previews: some View {
-        LoginView()
     }
 }

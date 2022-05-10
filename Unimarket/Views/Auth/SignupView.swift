@@ -8,8 +8,40 @@
 import SwiftUI
 
 struct SignupView: View {
+    @State var name: String = ""
+    @State var major: String = ""
+    @State var email: String = ""
+    @State var cellphone: String = ""
+    @State var password: String = ""
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Group {
+            VStack(spacing: 30) {
+                Text("UNIMARKET")
+                    .font(.title)
+                    .fontWeight(.bold)
+                    .padding(.top)
+                    .foregroundColor(Color("AccentRed"))
+                VStack(alignment: .leading, spacing: 30) {
+                    Text("Registro")
+                        .foregroundColor(Color("AccentGray"))
+                        .font(.title3)
+                    CustomTextField(placeholder: "Nombre", textValue: self.$name)
+                    CustomTextField(placeholder: "Carrera", textValue: self.$major)
+                    CustomTextField(placeholder: "Correo", textValue: self.$email)
+                        .keyboardType(.emailAddress)
+                    CustomTextField(placeholder: "Teléfono Celular", textValue: self.$cellphone)
+                        .keyboardType(.namePhonePad)
+                    CustomTextField(placeholder: "Contraseña", textValue: self.$password)
+                }
+                CustomButton(text: "Registrarse") {
+                    
+                }
+                Spacer()
+            }
+            .padding(.horizontal)
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(Color("Main"))
     }
 }
 

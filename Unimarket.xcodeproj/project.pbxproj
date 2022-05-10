@@ -28,6 +28,7 @@
 		65B9EB362828AF220099D1EC /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B9EB352828AF220099D1EC /* CustomTextField.swift */; };
 		65B9EB382828AF2F0099D1EC /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B9EB372828AF2F0099D1EC /* CustomButton.swift */; };
 		65B9EB3A2828AF720099D1EC /* CustomPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B9EB392828AF720099D1EC /* CustomPicker.swift */; };
+		65E3ECE32829F405008053D9 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E3ECE22829F405008053D9 /* AuthView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,7 @@
 		65B9EB352828AF220099D1EC /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		65B9EB372828AF2F0099D1EC /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		65B9EB392828AF720099D1EC /* CustomPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPicker.swift; sourceTree = "<group>"; };
+		65E3ECE22829F405008053D9 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +153,7 @@
 				65B9EB152828ACD90099D1EC /* SchoolView.swift */,
 				65B9EB172828ACEA0099D1EC /* LoginView.swift */,
 				65B9EB192828ACFD0099D1EC /* SignupView.swift */,
+				65E3ECE22829F405008053D9 /* AuthView.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -242,6 +245,7 @@
 				65B9EB1A2828ACFD0099D1EC /* SignupView.swift in Sources */,
 				65B9EB1E2828AD300099D1EC /* ProductDetailView.swift in Sources */,
 				65B9EB202828AD4A0099D1EC /* NewProductView.swift in Sources */,
+				65E3ECE32829F405008053D9 /* AuthView.swift in Sources */,
 				65B9EB012828A9760099D1EC /* ContentView.swift in Sources */,
 				65B9EB122828AC920099D1EC /* MainView.swift in Sources */,
 				65B9EB342828AF090099D1EC /* ProductCard.swift in Sources */,

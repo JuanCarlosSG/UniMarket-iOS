@@ -10,9 +10,15 @@ import SwiftUI
 struct SchoolView: View {
     @State var showCollegeList: Bool = false
     @State var selectedCollge: String = ""
+    @State var showLoginView : Bool = false
     var schools: [String] = ["", "Universidad Panamericana", "Tec CSF", "ITAM", "Anáhuac"]
     var body: some View {
         ZStack(alignment: .bottom) {
+            NavigationLink(isActive: self.$showLoginView) {
+                LoginView(collegeName: self.selectedCollge, showLoginView: self.$showLoginView)
+                    .navigationBarHidden(true)
+                
+            } label: { EmptyView() }
             VStack(spacing: 5) {
                 Spacer()
                 Text("Bienvenido a")
@@ -47,6 +53,11 @@ struct SchoolView: View {
                     
                     )
                     .padding(.horizontal)
+                    if selectedCollge != "" {
+                        CustomButton(text: "Continuar") {
+                            self.showLoginView.toggle()
+                        }
+                    }
 
                 }
                 .frame(maxHeight: screenHeight/2)
