@@ -9,7 +9,18 @@ import SwiftUI
 
 struct SettingsView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            CustomButton(text: "Borrar cuenta") {
+                
+            }
+            Spacer()
+            Text("UNIMARKET")
+                .font(.title)
+                .fontWeight(.bold)
+                .padding(.top)
+                .foregroundColor(Color("AccentRed"))
+        }
+        .navigationTitle("Configuración")
     }
 }
 

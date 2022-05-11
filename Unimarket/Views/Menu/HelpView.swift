@@ -9,7 +9,21 @@ import SwiftUI
 
 struct HelpView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(spacing: 20) {
+            CustomButton(text: "Reportar un problema") {
+                
+            }
+            CustomButton(text: "Enviar comentarios") {
+                
+            }
+            Spacer()
+            Text("UNIMARKET")
+                .font(.title)
+                .fontWeight(.bold)
+                .padding(.top)
+                .foregroundColor(Color("AccentRed"))
+        }
+        .navigationTitle("Ayuda")
     }
 }
 

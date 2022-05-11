@@ -11,10 +11,18 @@ struct MenuView: View {
     var buttons: [String] = ["Mis Publicaciones", "Configuración", "Ayuda", "Cerrar Sesión"]
     var buttonIcons: [String] = ["book.closed.circle", "gearshape.circle", "questionmark.circle", "power.circle"]
     @State var showProductsView : Bool = false
+    @State var showSettingsView : Bool = false
+    @State var showHelpView : Bool = false
     var body: some View {
         ZStack {
             NavigationLink(isActive: self.$showProductsView) {
                 ProductsView()
+            } label: { EmptyView() }
+            NavigationLink(isActive: self.$showSettingsView) {
+                SettingsView()
+            } label: { EmptyView() }
+            NavigationLink(isActive: self.$showHelpView) {
+                HelpView()
             } label: { EmptyView() }
             VStack(spacing: 20) {
                 Image("Profile")
