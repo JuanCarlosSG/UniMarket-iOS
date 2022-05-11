@@ -38,9 +38,7 @@ struct MenuView: View {
                 VStack(spacing: 10) {
                     ForEach(buttons.indices, id: \.self) { idx in
                         MenuButton(title: buttons[idx], icon: buttonIcons[idx]) {
-                            if buttons[idx] == "Mis Publicaciones" {
-                                self.showProductsView.toggle()
-                            }
+                            self.actionMenuButton(entry: buttons[idx])
                         }
                     }
                 }
@@ -56,6 +54,21 @@ struct MenuView: View {
         }
         .navigationBarHidden(false)
     }
+    
+    func actionMenuButton(entry: String) {
+        switch entry {
+        case "Mis Publicaciones":
+            self.showProductsView.toggle()
+        case "Configuración":
+            self.showSettingsView.toggle()
+        case "Ayuda":
+            self.showHelpView.toggle()
+        default:
+            print("Closed Sesion")
+            
+        }
+    }
+    
 }
 
 struct MenuView_Previews: PreviewProvider {

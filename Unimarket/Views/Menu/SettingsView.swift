@@ -10,9 +10,8 @@ import SwiftUI
 struct SettingsView: View {
     var body: some View {
         VStack {
-            CustomButton(text: "Borrar cuenta") {
-                
-            }
+            Spacer()
+            CustomButton(text: "Borrar cuenta") { }
             Spacer()
             Text("UNIMARKET")
                 .font(.title)

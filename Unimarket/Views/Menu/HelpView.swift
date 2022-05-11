@@ -10,12 +10,9 @@ import SwiftUI
 struct HelpView: View {
     var body: some View {
         VStack(spacing: 20) {
-            CustomButton(text: "Reportar un problema") {
-                
-            }
-            CustomButton(text: "Enviar comentarios") {
-                
-            }
+            Spacer()
+            CustomButton(text: "Reportar un problema") { }
+            CustomButton(text: "Enviar comentarios") { }
             Spacer()
             Text("UNIMARKET")
                 .font(.title)
