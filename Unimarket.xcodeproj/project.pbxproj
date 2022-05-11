@@ -10,6 +10,11 @@
 		65892232282AFE2B003BFB7E /* SocialMediaButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65892231282AFE2B003BFB7E /* SocialMediaButton.swift */; };
 		65892234282B0773003BFB7E /* ProductPostCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65892233282B0773003BFB7E /* ProductPostCard.swift */; };
 		65892236282B1167003BFB7E /* BttmTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65892235282B1167003BFB7E /* BttmTitle.swift */; };
+		65AF3ADD282B64200087FA3F /* UserCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AF3ADC282B64200087FA3F /* UserCredentials.swift */; };
+		65AF3ADF282B64C40087FA3F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AF3ADE282B64C40087FA3F /* User.swift */; };
+		65AF3AE1282B65600087FA3F /* MessageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AF3AE0282B65600087FA3F /* MessageResponse.swift */; };
+		65AF3AE3282B659A0087FA3F /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AF3AE2282B659A0087FA3F /* Product.swift */; };
+		65AF3AE5282B67550087FA3F /* NewProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AF3AE4282B67550087FA3F /* NewProduct.swift */; };
 		65B9EAFF2828A9760099D1EC /* UnimarketApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B9EAFE2828A9760099D1EC /* UnimarketApp.swift */; };
 		65B9EB012828A9760099D1EC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B9EB002828A9760099D1EC /* ContentView.swift */; };
 		65B9EB032828A97B0099D1EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65B9EB022828A97B0099D1EC /* Assets.xcassets */; };
@@ -43,6 +48,11 @@
 		65892231282AFE2B003BFB7E /* SocialMediaButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialMediaButton.swift; sourceTree = "<group>"; };
 		65892233282B0773003BFB7E /* ProductPostCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductPostCard.swift; sourceTree = "<group>"; };
 		65892235282B1167003BFB7E /* BttmTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BttmTitle.swift; sourceTree = "<group>"; };
+		65AF3ADC282B64200087FA3F /* UserCredentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCredentials.swift; sourceTree = "<group>"; };
+		65AF3ADE282B64C40087FA3F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		65AF3AE0282B65600087FA3F /* MessageResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageResponse.swift; sourceTree = "<group>"; };
+		65AF3AE2282B659A0087FA3F /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		65AF3AE4282B67550087FA3F /* NewProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewProduct.swift; sourceTree = "<group>"; };
 		65B9EAFB2828A9760099D1EC /* UniMarket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UniMarket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65B9EAFE2828A9760099D1EC /* UnimarketApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnimarketApp.swift; sourceTree = "<group>"; };
 		65B9EB002828A9760099D1EC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -149,6 +159,11 @@
 		65B9EB0E2828AA710099D1EC /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				65AF3ADC282B64200087FA3F /* UserCredentials.swift */,
+				65AF3ADE282B64C40087FA3F /* User.swift */,
+				65AF3AE0282B65600087FA3F /* MessageResponse.swift */,
+				65AF3AE2282B659A0087FA3F /* Product.swift */,
+				65AF3AE4282B67550087FA3F /* NewProduct.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -271,13 +286,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65AF3ADD282B64200087FA3F /* UserCredentials.swift in Sources */,
 				65B9EB2B2828AE420099D1EC /* ProductsView.swift in Sources */,
 				65B9EB222828AD9E0099D1EC /* SellerDetailView.swift in Sources */,
 				65B9EB382828AF2F0099D1EC /* CustomButton.swift in Sources */,
+				65AF3AE1282B65600087FA3F /* MessageResponse.swift in Sources */,
 				65D114C1282A2D7F00626B39 /* AddProductButton.swift in Sources */,
 				65D35CE1282A397300744D80 /* FilterView.swift in Sources */,
 				65B9EB1A2828ACFD0099D1EC /* SignupView.swift in Sources */,
 				65B9EB1E2828AD300099D1EC /* ProductDetailView.swift in Sources */,
+				65AF3AE3282B659A0087FA3F /* Product.swift in Sources */,
+				65AF3ADF282B64C40087FA3F /* User.swift in Sources */,
 				65B9EB202828AD4A0099D1EC /* NewProductView.swift in Sources */,
 				65E3ECE32829F405008053D9 /* AuthView.swift in Sources */,
 				65B9EB012828A9760099D1EC /* ContentView.swift in Sources */,
@@ -293,6 +312,7 @@
 				65B9EB242828ADF10099D1EC /* MenuView.swift in Sources */,
 				65B9EB162828ACD90099D1EC /* SchoolView.swift in Sources */,
 				65892232282AFE2B003BFB7E /* SocialMediaButton.swift in Sources */,
+				65AF3AE5282B67550087FA3F /* NewProduct.swift in Sources */,
 				65B9EB182828ACEA0099D1EC /* LoginView.swift in Sources */,
 				65D114C4282A338800626B39 /* ProductGridView.swift in Sources */,
 				65B9EAFF2828A9760099D1EC /* UnimarketApp.swift in Sources */,
