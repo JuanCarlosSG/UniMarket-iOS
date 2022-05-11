@@ -9,19 +9,18 @@ import SwiftUI
 
 struct ProductGridView: View {
     @State var showProductDetailView: Bool = false
+    @EnvironmentObject var pVM: ProductsViewModel
     var body: some View {
         ScrollView(showsIndicators: false) {
-            NavigationLink(isActive: self.$showProductDetailView) {
-                ProductDetailView()
-            } label: { EmptyView() }
             LazyVGrid(columns: [GridItem(spacing: 20), GridItem(spacing: 20)], spacing: 20) {
-                ForEach ((0...5), id: \.self) {_ in
-                    ProductCard(name: "Air Force 1", price: "5000", descr: "This is a Nike shoe") {
-                        self.showProductDetailView.toggle()
-                    }
+                ForEach (pVM.products, id: \.self) { product in
+                    ProductCard(product: product)
                 }
             }
             .padding()
+        }
+        .onAppear {
+            pVM.getProducts()
         }
     }
 }

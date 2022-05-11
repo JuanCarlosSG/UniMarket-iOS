@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ProductDetailView: View {
     @State var showSellerDetailView: Bool = false
+    var product: ProductPosted
     var body: some View {
         ZStack {
             NavigationLink(isActive: self.$showSellerDetailView) {
@@ -19,15 +20,15 @@ struct ProductDetailView: View {
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                 VStack(alignment: .leading, spacing: 15) {
-                    Text("Air Force 1")
+                    Text(product.nombre)
                         .bold()
                         .font(.title2)
-                    Text("$5000")
+                    Text("$\(product.precio)")
                         .fontWeight(.bold)
                     Divider()
                     Text("Descripción")
                         .font(.footnote)
-                    Text("This is a Nike Shoe")
+                    Text(product.descripcion)
                     Divider()
                 }
                 .padding(.horizontal)
@@ -37,11 +38,5 @@ struct ProductDetailView: View {
                 Spacer()
             }
         }
-    }
-}
-
-struct ProductDetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        ProductDetailView()
     }
 }

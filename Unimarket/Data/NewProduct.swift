@@ -9,7 +9,7 @@ struct NewProduct: Codable {
     
     let nombre: String
     let tipo: String
-    let precio: Float
+    let precio: Int
     let status: Bool
     let descripcion: String
     let usuarioId : String

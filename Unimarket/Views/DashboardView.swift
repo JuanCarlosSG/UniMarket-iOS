@@ -10,6 +10,7 @@ import SwiftUI
 struct DashboardView: View {
     @State var showNewProductView: Bool = false
     @State var showMenuView: Bool = false
+    @EnvironmentObject var pVM: ProductsViewModel
     var body: some View {
         NavigationView {
             ZStack(alignment: .bottomTrailing) {
