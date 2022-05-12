@@ -8,9 +8,15 @@
 import SwiftUI
 
 struct MainView: View {
+    @EnvironmentObject var sVM: SessionViewModel
     var body: some View {
-        DashboardView()
-            .environmentObject(ProductsViewModel())
+        if sVM.session != nil {
+            DashboardView()
+                .environmentObject(ProductsViewModel())
+        } else {
+            AuthView()
+        }
+        
     }
 }
 

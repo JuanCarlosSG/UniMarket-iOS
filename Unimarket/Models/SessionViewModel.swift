@@ -1,21 +1,26 @@
 //
-//  ProductsViewModel.swift
+//  SessionViewModel.swift
 //  Unimarket
 //
-//  Created by Juan Carlos Sánchez Gutiérrez on 10/05/22.
+//  Created by Juan Carlos Sánchez Gutiérrez on 11/05/22.
 //
 
 import Foundation
 
-class ProductsViewModel: ObservableObject {
+class SessionViewModel: ObservableObject {
     
-    @Published var products: [ProductPosted] = []
+    @Published var session: User? = nil
     
-    func getProducts() {
+    func signIn(credentials: UserCredentials) {
         
-        guard let url = URL(string: "http://192.168.1.71:3000/posts") else {fatalError()}
+        guard let url = URL(string: "http://192.168.1.71:3000/login") else {fatalError()}
         
-        let urlRequest = URLRequest(url: url)
+        var urlRequest = URLRequest(url: url)
+        
+        urlRequest.httpMethod = "POST"
+        urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        urlRequest.httpBody = try! JSONEncoder().encode(credentials)
+        print(urlRequest.httpBody!)
         
         let dataTask = URLSession.shared.dataTask(with: urlRequest) { (data, resp, error) in
             
@@ -30,9 +35,9 @@ class ProductsViewModel: ObservableObject {
             
             do {
                 
-                let finalResponse = try JSONDecoder().decode(ProductResponse.self, from: data)
+                let finalResponse = try JSONDecoder().decode(User.self, from: data)
                 DispatchQueue.main.async {
-                    self.products =  finalResponse
+                    self.session = finalResponse
                 }
                 
             } catch let jerror {
@@ -44,15 +49,14 @@ class ProductsViewModel: ObservableObject {
         
     }
     
-    func addProduct(newProduct: NewProduct, completion: @escaping (Bool) -> () ) {
-        
-        guard let url = URL(string: "http://192.168.1.71:3000/posts") else {fatalError()}
+    func singUp(user: User, completion: @escaping (Bool) -> ()) {
+        guard let url = URL(string: "http://192.168.1.71:3000/register") else {fatalError()}
         
         var urlRequest = URLRequest(url: url)
         
         urlRequest.httpMethod = "POST"
         urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        urlRequest.httpBody = try! JSONEncoder().encode(newProduct)
+        urlRequest.httpBody = try! JSONEncoder().encode(user)
         
         let dataTask = URLSession.shared.dataTask(with: urlRequest) { (data, resp, error) in
             
@@ -70,16 +74,23 @@ class ProductsViewModel: ObservableObject {
                 let finalResponse = try JSONDecoder().decode(MessageResponse.self, from: data)
                 DispatchQueue.main.async {
                     print(finalResponse.message)
+                    self.signIn(credentials: UserCredentials(usuarioId: user.usuarioId, constrasena: user.constrasena))
                     completion(true)
                 }
                 
             } catch let jerror {
+                completion(false)
                 print(jerror)
             }
             
         }
         dataTask.resume()
-        
+    }
+    
+    func signOut() {
+        if self.session != nil {
+            self.session = nil
+        }
     }
     
 }

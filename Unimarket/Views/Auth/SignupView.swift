@@ -11,6 +11,7 @@ struct SignupView: View {
     @State var name: String = ""
     @State var major: String = ""
     @State var email: String = ""
+    @State var userId: String = ""
     @State var cellphone: String = ""
     @State var password: String = ""
     var body: some View {
@@ -29,6 +30,7 @@ struct SignupView: View {
                     CustomTextField(placeholder: "Carrera", textValue: self.$major)
                     CustomTextField(placeholder: "Correo", textValue: self.$email)
                         .keyboardType(.emailAddress)
+                    CustomTextField(placeholder: "User", textValue: self.$userId)
                     CustomTextField(placeholder: "Teléfono Celular", textValue: self.$cellphone)
                         .keyboardType(.namePhonePad)
                     CustomTextField(placeholder: "Contraseña", textValue: self.$password)

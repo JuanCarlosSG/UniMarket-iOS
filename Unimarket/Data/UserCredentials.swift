@@ -8,6 +8,6 @@
 struct UserCredentials: Codable {
     
     let usuarioId: String
-    let contrasena: String
+    let constrasena: String
     
 }

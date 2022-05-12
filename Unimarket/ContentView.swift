@@ -17,6 +17,7 @@ var edges = window?.safeAreaInsets
 struct ContentView: View {
     var body: some View {
         MainView()
+            .environmentObject(SessionViewModel())
     }
 }
 

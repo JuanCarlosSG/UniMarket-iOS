@@ -13,6 +13,7 @@ struct MenuView: View {
     @State var showProductsView : Bool = false
     @State var showSettingsView : Bool = false
     @State var showHelpView : Bool = false
+    @EnvironmentObject var sVM: SessionViewModel
     var body: some View {
         ZStack {
             NavigationLink(isActive: self.$showProductsView) {
@@ -65,7 +66,7 @@ struct MenuView: View {
             self.showHelpView.toggle()
         default:
             print("Closed Sesion")
-            
+            sVM.signOut()
         }
     }
     

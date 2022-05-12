@@ -9,10 +9,11 @@ import SwiftUI
 
 struct LoginView: View {
     var collegeName: String
-    @State var email: String = ""
+    @State var user: String = ""
     @State var password : String = ""
     @Binding var showLoginView: Bool
     @State var showSignUpView: Bool = false
+    @EnvironmentObject var sVM: SessionViewModel
     var body: some View {
         ZStack {
             NavigationLink(isActive: self.$showSignUpView) {
@@ -35,10 +36,12 @@ struct LoginView: View {
                     Text("Inicia Sesión")
                         .foregroundColor(Color("AccentGray"))
                         .font(.title3)
-                    CustomTextField(placeholder: "Correo", textValue: self.$email)
+                    CustomTextField(placeholder: "Usuario", textValue: self.$user)
                     CustomTextField(placeholder: "Contraseña", textValue: self.$password)
                 }
-                CustomButton(text: "Iniciar Sesión") { }
+                CustomButton(text: "Iniciar Sesión") {
+                    self.signIn()
+                }
                 VStack(spacing: 20) {
                     HStack {
                         Text("¿No tienens cuenta?")
@@ -65,4 +68,9 @@ struct LoginView: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background( Color("Main") )
     }
+    
+    func signIn() {
+        sVM.signIn(credentials: UserCredentials(usuarioId: self.user, constrasena: self.password))
+    }
+    
 }
