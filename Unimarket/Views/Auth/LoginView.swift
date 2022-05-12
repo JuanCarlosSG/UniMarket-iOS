@@ -70,7 +70,7 @@ struct LoginView: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background( Color("Main") )
         .alert(isPresented: self.$showAlert) {
-            Alert(title: Text("Eror"), message: Text(self.alertText), dismissButton: .default(Text("Ok")))
+            Alert(title: Text("Error"), message: Text(self.alertText), dismissButton: .default(Text("Ok")))
         }
     }
     
