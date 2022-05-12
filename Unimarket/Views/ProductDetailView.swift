@@ -13,7 +13,7 @@ struct ProductDetailView: View {
     var body: some View {
         ZStack {
             NavigationLink(isActive: self.$showSellerDetailView) {
-                SellerDetailView()
+                SellerDetailView(seller: product.usuario)
             } label: { EmptyView() }
             VStack(spacing: 30) {
                 Image("Product")

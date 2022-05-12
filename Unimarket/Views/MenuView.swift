@@ -30,7 +30,7 @@ struct MenuView: View {
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .clipShape(Circle())
-                Text("Juan Carlos")
+                Text(sVM.session?.nombre ?? "Nombre")
                     .font(.title)
                     .bold()
                 CustomButton(text: "Editar Perfil") {

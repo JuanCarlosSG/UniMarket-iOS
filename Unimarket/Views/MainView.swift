@@ -11,10 +11,14 @@ struct MainView: View {
     @EnvironmentObject var sVM: SessionViewModel
     var body: some View {
         if sVM.session != nil {
-            DashboardView()
-                .environmentObject(ProductsViewModel())
+            withAnimation {
+                DashboardView()
+                    .environmentObject(ProductsViewModel())
+            }
         } else {
-            AuthView()
+            withAnimation {
+                AuthView()
+            }
         }
         
     }

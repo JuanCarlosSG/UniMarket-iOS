@@ -15,6 +15,7 @@ struct NewProductView: View {
     @State var desc: String = ""
     @State var categories: String = ""
     @EnvironmentObject var pVM: ProductsViewModel
+    @EnvironmentObject var sVM: SessionViewModel
     var body: some View {
         Group {
             VStack(alignment: .leading, spacing: 20) {
@@ -42,7 +43,7 @@ struct NewProductView: View {
                 CustomTextField(placeholder: "Categorías", textValue: self.$categories)
                 CustomButton(text: "Subir producto") {
                     if validateTextFields() {
-                        let np = NewProduct(nombre: self.title, tipo: self.type, precio: Int(self.price)!, status: true, descripcion: self.desc, usuarioId: "0223499", categorias: self.categories)
+                        let np = NewProduct(nombre: self.title, tipo: self.type, precio: Int(self.price)!, status: true, descripcion: self.desc, usuarioId: sVM.session!.usuarioId, categorias: self.categories)
                         pVM.addProduct(newProduct: np) { resp in
                             if resp {
                                 pVM.getProducts()

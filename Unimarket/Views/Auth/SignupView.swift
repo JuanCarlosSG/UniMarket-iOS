@@ -14,6 +14,7 @@ struct SignupView: View {
     @State var userId: String = ""
     @State var cellphone: String = ""
     @State var password: String = ""
+    @EnvironmentObject var sVM: SessionViewModel
     var body: some View {
         Group {
             VStack(spacing: 30) {
@@ -32,11 +33,11 @@ struct SignupView: View {
                         .keyboardType(.emailAddress)
                     CustomTextField(placeholder: "User", textValue: self.$userId)
                     CustomTextField(placeholder: "Teléfono Celular", textValue: self.$cellphone)
-                        .keyboardType(.namePhonePad)
+                        .keyboardType(.phonePad)
                     CustomTextField(placeholder: "Contraseña", textValue: self.$password)
                 }
                 CustomButton(text: "Registrarse") {
-                    
+                    self.register()
                 }
                 Spacer()
             }
@@ -45,6 +46,16 @@ struct SignupView: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color("Main"))
     }
+    
+    func register() {
+        let newUser = User(usuarioId: self.userId, nombre: self.name, carrera: self.major, email: self.email, celular: self.cellphone, constrasena: self.password)
+        sVM.singUp(user: newUser) { resp in
+            if !resp {
+                
+            }
+        }
+    }
+    
 }
 
 struct SignupView_Previews: PreviewProvider {

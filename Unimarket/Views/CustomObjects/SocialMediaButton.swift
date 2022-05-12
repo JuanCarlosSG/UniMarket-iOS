@@ -13,7 +13,7 @@ struct SocialMediaButton: View {
     var action: () -> Void
     var body: some View {
         Button {
-            
+            action()
         } label: {
             Text(text)
                 .font(.headline)

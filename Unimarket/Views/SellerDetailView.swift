@@ -8,12 +8,13 @@
 import SwiftUI
 
 struct SellerDetailView: View {
+    var seller : User
     var body: some View {
         VStack(spacing: 10) {
-            Text("Juan Carlos")
+            Text(seller.nombre)
                 .font(.title)
                 .fontWeight(.bold)
-            Text("Ingeniería TI")
+            Text(seller.carrera)
             Circle()
                 .fill(Color.clear)
                 .aspectRatio(1, contentMode: .fit)
@@ -35,7 +36,14 @@ struct SellerDetailView: View {
                     
                 }
                 SocialMediaButton(text: "Mandar Mail", color: "Mail") {
-                    
+                    let email = seller.email
+                    if let url = URL(string: "mailto:\(email)") {
+                      if #available(iOS 10.0, *) {
+                        UIApplication.shared.open(url)
+                      } else {
+                        UIApplication.shared.openURL(url)
+                      }
+                    }
                 }
                 
             }
@@ -44,11 +52,5 @@ struct SellerDetailView: View {
         }
         .padding()
         .navigationBarHidden(false)
-    }
-}
-
-struct SellerDetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        SellerDetailView()
     }
 }
