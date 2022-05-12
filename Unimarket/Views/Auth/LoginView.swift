@@ -13,6 +13,8 @@ struct LoginView: View {
     @State var password : String = ""
     @Binding var showLoginView: Bool
     @State var showSignUpView: Bool = false
+    @State var showAlert: Bool = false
+    @State var alertText: String = "Alerta"
     @EnvironmentObject var sVM: SessionViewModel
     var body: some View {
         ZStack {
@@ -67,10 +69,30 @@ struct LoginView: View {
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background( Color("Main") )
+        .alert(isPresented: self.$showAlert) {
+            Alert(title: Text("Eror"), message: Text(self.alertText), dismissButton: .default(Text("Ok")))
+        }
+    }
+    
+    func setAlert(message: String) {
+        self.alertText = message
+        self.showAlert.toggle()
+    }
+    
+    func validateFields() -> Bool {
+        return ( self.user != "" && self.password != "" )
     }
     
     func signIn() {
-        sVM.signIn(credentials: UserCredentials(usuarioId: self.user, constrasena: self.password))
+        if validateFields() {
+            sVM.signIn(credentials: UserCredentials(usuarioId: self.user, constrasena: self.password)) { res in
+                if !res {
+                    self.setAlert(message: "Usuario o Contraseña incorrectos")
+                }
+            }
+        } else {
+            self.setAlert(message: "Debes llenar todos los campos antes de continuar")
+        }
     }
     
 }

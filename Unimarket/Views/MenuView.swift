@@ -65,7 +65,6 @@ struct MenuView: View {
         case "Ayuda":
             self.showHelpView.toggle()
         default:
-            print("Closed Sesion")
             sVM.signOut()
         }
     }

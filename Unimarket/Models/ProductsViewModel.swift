@@ -74,6 +74,7 @@ class ProductsViewModel: ObservableObject {
                 }
                 
             } catch let jerror {
+                completion(false)
                 print(jerror)
             }
             

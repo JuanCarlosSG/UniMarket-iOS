@@ -14,6 +14,8 @@ struct SignupView: View {
     @State var userId: String = ""
     @State var cellphone: String = ""
     @State var password: String = ""
+    @State var showAlert: Bool = false
+    @State var alertText: String = "Alerta"
     @EnvironmentObject var sVM: SessionViewModel
     var body: some View {
         Group {
@@ -45,14 +47,30 @@ struct SignupView: View {
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color("Main"))
+        .alert(isPresented: self.$showAlert) {
+            Alert(title: Text("Eror"), message: Text(self.alertText), dismissButton: .default(Text("Ok")))
+        }
+    }
+    
+    func setAlert(message: String) {
+        self.alertText = message
+        self.showAlert.toggle()
+    }
+    
+    func validateFields() -> Bool {
+        return ( self.name != "" && self.major != "" && self.email != "" && self.userId != "" && self.cellphone != "" && self.password != "" )
     }
     
     func register() {
-        let newUser = User(usuarioId: self.userId, nombre: self.name, carrera: self.major, email: self.email, celular: self.cellphone, constrasena: self.password)
-        sVM.singUp(user: newUser) { resp in
-            if !resp {
-                
+        if self.validateFields() {
+            let newUser = User(usuarioId: self.userId, nombre: self.name, carrera: self.major, email: self.email, celular: self.cellphone, constrasena: self.password)
+            sVM.singUp(user: newUser) { resp in
+                if !resp {
+                    self.setAlert(message: "Usuario ya existe")
+                }
             }
+        } else {
+            self.setAlert(message: "Debes llenar todos los campos antes de continuar")
         }
     }
     

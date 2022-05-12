@@ -11,7 +11,7 @@ class SessionViewModel: ObservableObject {
     
     @Published var session: User? = nil
     
-    func signIn(credentials: UserCredentials) {
+    func signIn(credentials: UserCredentials, completion: @escaping (Bool) -> ()) {
         
         guard let url = URL(string: "http://192.168.1.71:3000/login") else {fatalError()}
         
@@ -37,10 +37,12 @@ class SessionViewModel: ObservableObject {
                 
                 let finalResponse = try JSONDecoder().decode(User.self, from: data)
                 DispatchQueue.main.async {
+                    completion(true)
                     self.session = finalResponse
                 }
                 
             } catch let jerror {
+                completion(false)
                 print(jerror)
             }
             
@@ -74,7 +76,9 @@ class SessionViewModel: ObservableObject {
                 let finalResponse = try JSONDecoder().decode(MessageResponse.self, from: data)
                 DispatchQueue.main.async {
                     print(finalResponse.message)
-                    self.signIn(credentials: UserCredentials(usuarioId: user.usuarioId, constrasena: user.constrasena))
+                    self.signIn(credentials: UserCredentials(usuarioId: user.usuarioId, constrasena: user.constrasena)) { _ in
+                        
+                    }
                     completion(true)
                 }
                 
